@@ -1,0 +1,1077 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --bg: #f5f6fa;
+  --p: #fff;
+  --t: #121827;
+  --m: #667085;
+  --b: #e4e7ec;
+  --a: #4f46e5;
+  --s: #eef2ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 14px Inter;
+  background: var(--bg);
+  color: var(--t);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================================================
+   APP LAYOUT
+   ========================================================= */
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ONLY the main application sidebar gets fixed positioning */
+.app > aside {
+  width: 230px;
+  background: #0d1424;
+  color: #dce2f2;
+  padding: 22px 14px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+/* =========================================================
+   BRAND / SIDEBAR
+   ========================================================= */
+
+.brand {
+  font-size: 22px;
+  font-weight: 800;
+  padding: 5px 10px;
+}
+
+.brand b {
+  background: #5b5cf0;
+  padding: 5px 9px;
+  border-radius: 8px;
+  margin-right: 7px;
+}
+
+.app > aside > small {
+  font: 9px "DM Mono";
+  color: #77839b;
+  padding: 7px 11px 35px;
+}
+
+.nav {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: none;
+  color: #98a5bc;
+  padding: 11px;
+  border-radius: 8px;
+  margin: 3px 0;
+}
+
+.nav.active,
+.nav:hover {
+  background: #1c2740;
+  color: #fff;
+}
+
+.side-bottom {
+  margin-top: auto;
+}
+
+.user {
+  border-top: 1px solid #273149;
+  padding: 17px 8px;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.user i,
+header i {
+  width: 30px;
+  height: 30px;
+  background: #dfe3ff;
+  color: #4338ca;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.user small {
+  display: block;
+  color: #77839b;
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+  margin-left: 230px;
+  width: calc(100% - 230px);
+  min-width: 0;
+}
+
+header {
+  height: 62px;
+  background: var(--p);
+  border-bottom: 1px solid var(--b);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 34px;
+  color: var(--m);
+  font-size: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+header button {
+  border: 0;
+  background: none;
+  color: var(--m);
+}
+
+header i {
+  display: inline-grid;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+/* =========================================================
+   GENERAL PAGE
+   ========================================================= */
+
+.page {
+  max-width: 1250px;
+  margin: auto;
+  padding: 38px;
+}
+
+.page h1 {
+  font-size: 35px;
+  letter-spacing: -0.04em;
+  margin: 7px 0;
+}
+
+.page h2 {
+  font-size: 17px;
+}
+
+.page p {
+  line-height: 1.7;
+}
+
+.page > label,
+.reviewhead label {
+  font: 10px "DM Mono";
+  letter-spacing: 0.13em;
+  color: var(--a);
+}
+
+.muted {
+  color: var(--m);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  background: linear-gradient(120deg, #fff, #eef2ff);
+  border: 1px solid #dfe3f7;
+  border-radius: 19px;
+  padding: 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero p {
+  max-width: 650px;
+  color: var(--m);
+}
+
+.hero .loop {
+  font: 10px "DM Mono";
+  background: #fff;
+  border: 1px solid #d8ddf3;
+  padding: 20px;
+  border-radius: 13px;
+  color: var(--a);
+}
+
+.primary {
+  border: 0;
+  background: var(--a);
+  color: white;
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-weight: 700;
+}
+
+.small {
+  padding: 8px 12px;
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+  margin: 17px 0 35px;
+}
+
+.stat {
+  background: var(--p);
+  border: 1px solid var(--b);
+  padding: 17px;
+  border-radius: 13px;
+}
+
+.stat small {
+  display: block;
+  color: var(--m);
+}
+
+.stat strong {
+  font-size: 25px;
+  display: block;
+  margin-top: 5px;
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0 12px;
+}
+
+.section button {
+  border: 0;
+  background: none;
+  color: var(--a);
+  font-size: 12px;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background: var(--p);
+  border: 1px solid var(--b);
+  border-radius: 14px;
+  padding: 18px;
+  min-height: 245px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardtop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardtop b {
+  width: 40px;
+  height: 40px;
+  background: var(--s);
+  color: var(--a);
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+}
+
+.cardtop em,
+.workhead em {
+  font-style: normal;
+  font-size: 10px;
+  background: #fff4e8;
+  color: #c2410c;
+  padding: 5px 8px;
+  border-radius: 99px;
+}
+
+.card h3 {
+  margin-bottom: 4px;
+}
+
+.card p {
+  color: var(--m);
+  font-size: 12px;
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  gap: 5px;
+}
+
+.tags span {
+  font-size: 9px;
+  padding: 5px 7px;
+  border: 1px solid var(--b);
+  border-radius: 99px;
+  color: var(--m);
+}
+
+.card footer {
+  border-top: 1px solid var(--b);
+  padding-top: 12px;
+  margin-top: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card footer small {
+  color: var(--m);
+}
+
+/* =========================================================
+   CONTINUE
+   ========================================================= */
+
+.continue {
+  background: var(--p);
+  border: 1px solid var(--b);
+  border-radius: 13px;
+  padding: 17px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.continue span {
+  color: var(--m);
+  flex: 1;
+  font-size: 12px;
+}
+
+.continue button,
+.filters button,
+.challenge button {
+  border: 1px solid var(--b);
+  background: var(--p);
+  padding: 9px 12px;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin: 25px 0;
+}
+
+.filters input {
+  flex: 1;
+  border: 1px solid var(--b);
+  border-radius: 8px;
+  padding: 11px;
+  background: var(--p);
+  outline: none;
+}
+
+/* =========================================================
+   WORKSPACE HEADER
+   ========================================================= */
+
+.workhead {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.workhead h1 {
+  font-size: 24px;
+}
+
+.workhead > span {
+  margin-left: auto;
+  color: var(--m);
+  font-size: 11px;
+}
+
+/* =========================================================
+   LLD WORKSPACE
+   ========================================================= */
+
+.workspace {
+  display: grid;
+  grid-template-columns: 255px minmax(0, 1fr) 200px;
+  gap: 13px;
+  align-items: start;
+}
+
+/*
+ IMPORTANT:
+ Workspace asides are NOT application sidebars.
+ They must remain normal grid elements.
+*/
+
+.workspace > aside {
+  position: static;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  display: block;
+  z-index: auto;
+}
+
+.problem,
+.editor,
+.checks {
+  background: var(--p);
+  border: 1px solid var(--b);
+  border-radius: 13px;
+}
+
+/* =========================================================
+   PROBLEM PANEL
+   ========================================================= */
+
+.problem,
+.checks {
+  padding: 17px;
+}
+
+.problem > label,
+.checks > label {
+  font: 9px "DM Mono";
+  color: var(--m);
+  letter-spacing: 0.12em;
+}
+
+.problem h3 {
+  margin-bottom: 5px;
+}
+
+.problem p {
+  color: var(--m);
+  font-size: 11px;
+}
+
+.problem hr {
+  border: 0;
+  border-top: 1px solid var(--b);
+  margin: 18px 0;
+}
+
+.tip {
+  background: var(--s);
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--m);
+  font-size: 10px;
+  margin-top: 15px;
+}
+
+/* =========================================================
+   EDITOR
+   ========================================================= */
+
+.editor {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--b);
+}
+
+.tabs button {
+  border: 0;
+  background: none;
+  padding: 13px 16px;
+  color: var(--m);
+}
+
+.tabs .on {
+  color: var(--a);
+  border-bottom: 2px solid var(--a);
+}
+
+form {
+  padding: 19px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.field b {
+  display: block;
+  font-size: 12px;
+}
+
+.field small {
+  display: block;
+  color: var(--m);
+  font-size: 10px;
+  margin: 4px 0 7px;
+}
+
+.field textarea,
+.challenge textarea {
+  width: 100%;
+  min-height: 83px;
+  border: 1px solid var(--b);
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--bg);
+  resize: vertical;
+  outline: none;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 3px;
+}
+
+/* =========================================================
+   DESIGN CHECK
+   ========================================================= */
+
+.checks {
+  position: static;
+  overflow: hidden;
+}
+
+.check {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--b);
+  font-size: 11px;
+}
+
+.check span {
+  color: #16a34a;
+  margin-right: 8px;
+}
+
+/* =========================================================
+   DIAGRAM
+   ========================================================= */
+
+.diagram {
+  height: 470px;
+  padding: 18px;
+  position: relative;
+}
+
+.tools button {
+  border: 1px solid var(--b);
+  background: var(--p);
+  padding: 7px;
+  border-radius: 7px;
+  font-size: 10px;
+  margin-right: 6px;
+}
+
+.uml {
+  position: absolute;
+  background: var(--p);
+  border: 1px solid #818cf8;
+  border-radius: 8px;
+  padding: 10px;
+  width: 145px;
+  font-size: 10px;
+  box-shadow: 0 8px 20px #0001;
+}
+
+.mainuml {
+  top: 110px;
+  left: 39%;
+}
+
+.u1 {
+  top: 280px;
+  left: 18%;
+}
+
+.u2 {
+  top: 280px;
+  right: 18%;
+}
+
+.uml hr {
+  border: 0;
+  border-top: 1px solid var(--b);
+}
+
+.diagram p {
+  position: absolute;
+  bottom: 10px;
+  color: var(--m);
+  font-size: 9px;
+}
+
+/* =========================================================
+   REVIEW
+   ========================================================= */
+
+.reviewhead {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.reviewhead > button {
+  margin-left: auto;
+}
+
+.score {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  border: 7px solid #c7d2fe;
+  display: grid;
+  place-items: center;
+  color: var(--a);
+}
+
+.score b {
+  font-size: 27px;
+}
+
+.score small {
+  font-size: 9px;
+}
+
+.reviewgrid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 18px;
+}
+
+.reviewgrid > section,
+.challenge,
+.profile,
+.skills,
+.table {
+  background: var(--p);
+  border: 1px solid var(--b);
+  border-radius: 13px;
+  padding: 19px;
+}
+
+.criterion {
+  border-bottom: 1px solid var(--b);
+  padding: 15px 0;
+}
+
+.criterion > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.criterion strong {
+  color: var(--a);
+}
+
+progress {
+  width: 100%;
+  height: 6px;
+  margin: 8px 0;
+  accent-color: var(--a);
+}
+
+.criterion p {
+  font-size: 11px;
+  color: var(--m);
+  margin: 5px 0;
+}
+
+/* =========================================================
+   CHALLENGE
+   ========================================================= */
+
+.challenge {
+  margin-bottom: 13px;
+}
+
+.challenge label {
+  font: 9px "DM Mono";
+  color: var(--a);
+}
+
+.challenge p {
+  font-size: 11px;
+  color: var(--m);
+}
+
+.challenge textarea {
+  min-height: 95px;
+  margin: 5px 0;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table {
+  padding: 0;
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 80px 110px;
+  gap: 10px;
+  padding: 16px;
+  border-bottom: 1px solid var(--b);
+  align-items: center;
+  font-size: 12px;
+}
+
+.row small,
+.row span {
+  color: var(--m);
+}
+
+.row button {
+  border: 0;
+  background: none;
+  color: var(--a);
+}
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--a) 0 72%,
+    var(--b) 72%
+  );
+  display: grid;
+  place-items: center;
+  position: relative;
+  color: var(--a);
+}
+
+.circle:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: var(--p);
+  border-radius: 50%;
+}
+
+.circle b,
+.circle small {
+  position: relative;
+  z-index: 1;
+}
+
+.circle b {
+  font-size: 27px;
+}
+
+.circle small {
+  font-size: 9px;
+}
+
+.skills {
+  margin-top: 15px;
+}
+
+.skills > div {
+  display: grid;
+  grid-template-columns: 180px 1fr 45px;
+  gap: 10px;
+  align-items: center;
+  margin: 14px 0;
+  font-size: 11px;
+}
+
+.weak {
+  margin-top: 15px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 14px;
+  border-radius: 10px;
+  color: #9a3412;
+}
+
+.weak span {
+  margin-left: 10px;
+  color: #a16207;
+}
+
+/* =========================================================
+   EMPTY / BACK
+   ========================================================= */
+
+.empty {
+  text-align: center;
+  padding: 100px;
+  color: var(--m);
+}
+
+.back {
+  border: 0;
+  background: none;
+  color: var(--m);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+/* =========================================================
+   FORM / CANVAS
+   ========================================================= */
+
+.selected {
+  background: var(--s) !important;
+  color: var(--a) !important;
+  border-color: #c7d2fe !important;
+}
+
+.formpad {
+  padding: 19px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions > button:first-child {
+  border: 1px solid var(--b);
+  background: var(--p);
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+
+.canvas {
+  position: relative;
+  height: 400px;
+  border: 1px dashed var(--b);
+  border-radius: 10px;
+  margin-top: 15px;
+  overflow: auto;
+  background-image:
+    linear-gradient(#00000008 1px, transparent 1px),
+    linear-gradient(90deg, #00000008 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.canvas .uml {
+  position: absolute;
+}
+
+/* =========================================================
+   COMPARE / TOAST
+   ========================================================= */
+
+.compare {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid var(--b);
+  font-size: 11px;
+}
+
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background: #101828;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 9px;
+  box-shadow: 0 10px 30px #0003;
+  font-size: 12px;
+  z-index: 20;
+}
+
+/* =========================================================
+   CHALLENGE RESULT
+   ========================================================= */
+
+.challenge-result {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--s);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 10px;
+}
+
+.challenge-result b {
+  font-size: 18px;
+  color: var(--a);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  /* Only the real application sidebar becomes compact */
+  .app > aside {
+    width: 70px;
+  }
+
+  .brand {
+    font-size: 0;
+  }
+
+  .brand b {
+    font-size: 18px;
+  }
+
+  .app > aside > small,
+  .nav {
+    font-size: 0;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  .user span {
+    display: none;
+  }
+
+  main {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+  }
+
+  .workspace {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .checks {
+    display: none;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .page {
+    padding: 22px 15px;
+  }
+
+  .hero {
+    padding: 25px;
+  }
+
+  .hero .loop {
+    display: none;
+  }
+
+  .stats,
+  .cards,
+  .reviewgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .problem {
+    display: none;
+  }
+
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reviewhead {
+    flex-wrap: wrap;
+  }
+
+  .reviewhead > button {
+    margin-left: 0;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+  }
+
+  header {
+    padding: 0 15px;
+  }
+
+  .page h1 {
+    font-size: 28px;
+  }
+
+  .workspace > aside {
+    display: block;
+    width: 100%;
+  }
+}

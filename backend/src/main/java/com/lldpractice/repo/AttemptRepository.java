@@ -1,0 +1,1 @@
+package com.lldpractice.repo; import com.lldpractice.domain.Attempt; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface AttemptRepository extends JpaRepository<Attempt,Long>{ List<Attempt> findAllByOrderByCreatedAtDesc(); List<Attempt> findByProblemIdOrderByCreatedAtAsc(Long problemId); }

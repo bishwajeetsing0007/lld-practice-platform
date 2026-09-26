@@ -1,0 +1,1 @@
+package com.lldpractice.repo; import com.lldpractice.domain.Evaluation; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface EvaluationRepository extends JpaRepository<Evaluation,Long>{ Optional<Evaluation> findByAttemptId(Long attemptId); }

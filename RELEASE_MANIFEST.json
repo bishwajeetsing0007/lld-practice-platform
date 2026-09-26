@@ -1,0 +1,22 @@
+{
+  "release": "LLDX Industry MVP v2.1",
+  "backend": "Spring Boot modular monolith + JPA + H2",
+  "frontend": "React + Vite",
+  "features": [
+    "problem explorer",
+    "structured design workspace",
+    "persistent attempts",
+    "rule-based rubric evaluation",
+    "design challenge evaluation",
+    "requirement change evaluation",
+    "attempt comparison",
+    "weakness/progress analytics",
+    "persisted diagram elements",
+    "dark/light responsive UI",
+    "AI evaluator strategy extension point"
+  ],
+  "run": {
+    "backend": "cd D:\\lld-practice-platform\\backend && mvn clean package && mvn org.springframework.boot:spring-boot-maven-plugin:3.5.6:run",
+    "frontend": "cd D:\\lld-practice-platform\\frontend && npm install && npm run dev"
+  }
+}

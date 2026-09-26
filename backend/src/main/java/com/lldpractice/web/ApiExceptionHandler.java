@@ -1,0 +1,2 @@
+package com.lldpractice.web; import org.springframework.http.*; import org.springframework.web.bind.annotation.*; import java.util.*;
+@RestControllerAdvice public class ApiExceptionHandler { @ExceptionHandler(NoSuchElementException.class) ResponseEntity<?> missing(NoSuchElementException e){return ResponseEntity.status(404).body(Map.of("error","Resource not found"));} @ExceptionHandler(Exception.class) ResponseEntity<?> error(Exception e){return ResponseEntity.status(500).body(Map.of("error",e.getMessage()==null?"Internal server error":e.getMessage()));} }
